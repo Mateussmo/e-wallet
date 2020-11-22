@@ -23,9 +23,9 @@ describe('Create a Expense', () => {
   })
 
   it('Should create a expense on endpoint', async () => {
-    const response = await request(app).post('/spent/create').send({})
-
-    console.log(response)
+    const response = await request(app)
+      .post('/expenses')
+      .send({title: 'Padaria', description: 'Cafe na Padaria', tag: 'comida', value: 5.5})
 
     expect(response).toEqual({
       id: 1,

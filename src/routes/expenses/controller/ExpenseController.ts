@@ -3,18 +3,16 @@ import {Request, Response} from 'express'
 
 class ExpensesController {
   store(request: Request, response: Response): Response {
-    const teste = request.body
-    console.log(teste)
+    const {title, description, tag, value} = request.body
 
     const createExpense = new CreateExpenseService()
 
     const expense = createExpense.execute({
-      title: 'Padaria',
-      description: 'Cafe na Padaria',
-      tag: 'comida',
-      value: 5.5
+      title,
+      description,
+      tag,
+      value
     })
-    console.log(expense)
 
     return response.status(201).json(expense)
   }
