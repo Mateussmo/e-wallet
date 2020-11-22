@@ -3,8 +3,8 @@ import {Router} from 'express'
 
 const expenseRouter = Router()
 
-const expense = new ExpenseController()
+const expenseController = new ExpenseController()
 
-expenseRouter.post('/', expense.store)
+expenseRouter.post('/', expenseController.store)
 
 export default expenseRouter
