@@ -1,13 +1,9 @@
-export interface IRequestDTO {
+export interface IRequestCreateDTO {
   title: string
   description: string
   tag: string
   value: number
 }
-export interface IResponseDTO {
+export interface IResponseCreateDTO extends IRequestCreateDTO {
   id: number
-  title: string
-  description: string
-  tag: string
-  value: number
 }
